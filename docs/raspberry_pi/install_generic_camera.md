@@ -4,7 +4,7 @@
 
 - [The official documentation to use a Raspberry Pi camera module.](https://www.raspberrypi.com/documentation/accessories/camera.html)
 
-## Disable camera LED
+## Disable camera LED at bootup
 
 Edit `/boot/config.txt` and add the following lines:
 
