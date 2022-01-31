@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-"""Capture to file
+"""Camera capture to file
 
 This script captures photos taken by the Raspberry Pi camera module and save them as files.
 It captures a photo each time the button is pressed.
