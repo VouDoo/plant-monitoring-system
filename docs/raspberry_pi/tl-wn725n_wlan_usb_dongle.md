@@ -1,12 +1,14 @@
-# Install TL-WN725N Wireless USB dongle on Raspberry Pi
-
-This guide assumes that the Raspberry Pi runs a recent version of Raspbian.
+# TP-Link TL-WN725N Wireless USB dongle on Raspberry Pi
 
 Official support page for [TL-WN725N](https://www.tp-link.com/us/support/download/tl-wn725n/).
 
+## Installation
+
+This installation guide assumes that the Raspberry Pi runs a recent version of Raspbian.
+
 _Do not plug the dongle until explicitly mentioned._
 
-## Prepare the system
+### Prepare the system
 
 1. Upgrade existing packages.
 
@@ -20,7 +22,7 @@ _Do not plug the dongle until explicitly mentioned._
     sudo apt-get install -y build-essential raspberrypi-kernel-headers git
     ```
 
-## Install the driver
+### Install the driver
 
 1. Clone the firmware repository ([stand-alone RTL8188EU driver](https://github.com/lwfinger/rtl8188eu)).
 
@@ -43,7 +45,7 @@ _Do not plug the dongle until explicitly mentioned._
     rm -rf ~/rtl8188eu
     ```
 
-## Install the dongle
+### Install the dongle
 
 1. Physically power off the Raspberry Pi.
 2. Plug the USB dongle.
@@ -66,7 +68,7 @@ _Do not plug the dongle until explicitly mentioned._
     ip a | grep 'wlan0' || echo 'not found'
     ```
 
-## Configure network interface
+### Configure network interface
 
 1. Create the configuration file for the `wlan0` interface.
 
