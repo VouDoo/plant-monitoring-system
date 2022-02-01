@@ -25,6 +25,7 @@ GPIO.setup(CAMLED, GPIO.OUT, initial=False)
 GPIO.setup(CAMBTN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 camera = PiCamera()
 
+print("Press the button to take a picture.")
 while True:
     GPIO.output(CAMLED, False)  # turn off camera led
     if GPIO.input(CAMBTN) == False:
