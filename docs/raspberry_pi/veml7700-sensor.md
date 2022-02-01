@@ -32,4 +32,19 @@ sudo pip3 install adafruit-circuitpython-veml7700
 
 ### I2C protocol
 
-`i2c-tools` packages provides a bench of tools to analyse I2C buses.
+`i2c-tools` package provides a bench of tools to analyse I2C buses.
+
+To detect I2C chips, run this command:
+
+```sh
+ic2detect -y 1
+```
+
+To read the lux sensor I2C chip, run this command:
+
+_`0x10` is the address used by the chip._
+
+```sh
+i2cget -y 1 0x10
+# if no error, it should return "0x00", else "Error: Read failed"
+```
