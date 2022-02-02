@@ -1,13 +1,12 @@
 #!/usr/bin/python
 
-"""Camera capture to file
+"""Capture to file
 
 This script captures photos taken by the Raspberry Pi camera module and save them as files.
 It captures a photo each time the button is pressed.
-
-Before using this script, ensure that the /home/pi/camera directory exists.
 """
 
+import os
 from time import sleep, strftime
 # GPIO module(s)
 import RPi.GPIO as GPIO
@@ -20,10 +19,15 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 # camera
 CAMBTN = 23  # pin 16
-CAMLED = 32  # camera integreted pin
+CAMLED = 32  # camera's integrated pin
 GPIO.setup(CAMLED, GPIO.OUT, initial=False)
 GPIO.setup(CAMBTN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 camera = PiCamera()
+
+# create camera directory
+camera_dir = "/home/pi/camera"
+if not os.path.exists(camera_dir):
+    os.makedirs(camera_dir)
 
 print("Press the button to take a picture.")
 while True:

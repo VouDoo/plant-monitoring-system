@@ -1,4 +1,4 @@
-# Generic camera on Raspberry Pi
+# Camera on Raspberry Pi
 
 Documentation for the Raspberry Pi camera module: [camera on raspberrypi.com](https://www.raspberrypi.com/documentation/accessories/camera.html).
 

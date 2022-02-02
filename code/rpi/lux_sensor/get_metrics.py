@@ -2,7 +2,7 @@
 
 """Get lux metrics
 
-This script gets lux and light metrics from the sensor.
+This script gets lux and light metrics from the VEML7700 sensor.
 """
 
 from time import sleep
