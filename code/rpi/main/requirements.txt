@@ -1,0 +1,6 @@
+schedule
+RPi.GPIO
+board
+neopixel
+picamera
+prometheus_client
