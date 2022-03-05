@@ -1,6 +1,7 @@
 schedule
 RPi.GPIO
-neopixel
+adafruit-circuitpython-busdevice
 adafruit-circuitpython-veml7700
+neopixel
 picamera
 prometheus_client
