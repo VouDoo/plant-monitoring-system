@@ -3,7 +3,7 @@
 import os
 import logging
 import time
-import picamera
+from picamera import PiCamera
 
 # internal module(s)
 import config
@@ -22,7 +22,7 @@ class Camera(object):
 
         self.__led_on(False)  # ensure LED is turned off
 
-        self.__camera = picamera.PiCamera()
+        self.__camera = PiCamera()
         self.__camera.rotation = config.CAMERA_ROTATION
         logging.info(f"Camera rotation is set to {self.__camera.rotation}.")
 

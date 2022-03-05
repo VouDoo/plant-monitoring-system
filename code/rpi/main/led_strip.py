@@ -3,7 +3,7 @@
 import logging
 import time
 import enum
-import neopixel
+from neopixel import NeoPixel
 
 # internal module(s)
 import config
@@ -30,7 +30,7 @@ class LedStrip(object):
         self.__count = config.LED_STRIP_LED_COUNT
         logging.info(f"LED strip is initiated with {self.__count} LEDs.")
 
-        self.__pixels = neopixel.NeoPixel(self.__pin, self.__count)
+        self.__pixels = NeoPixel(self.__pin, self.__count)
 
         self.set_mode(LedMode.OFF)
         self.__currmode = LedMode.OFF
