@@ -40,7 +40,7 @@ class Camera(object):
     def capture(self) -> None:
         """Capture a photo with the camera module and save it as a file."""
         now = time.strftime("%Y%m%d-%H%M%S")
-        filepath = os.path.join(self.__output_dir, f"capture_{now}.jpg")
+        filepath = os.path.join(self.__output_dir, f"{now}.jpg")
 
         self.__led_on(True)
         self.__camera.start_preview()
