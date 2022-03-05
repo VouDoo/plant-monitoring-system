@@ -3,8 +3,8 @@
 # ensure script is executed as root
 if ! [ $(id -u) = 0 ]
 then
-   echo "This script must be run as root."
-   exit 1
+    echo "This script must be run as root."
+    exit 1
 fi
 
 # install application
@@ -13,6 +13,7 @@ curl -SsL "https://github.com/VouDoo/plant-monitoring-system/releases/download/v
     -o /tmp/rpi-app.tar.gz
 tar -xf /tmp/rpi-app.tar.gz -C /plant_monitoring_system
 rm /tmp/rpi-app.tar.gz
+/usr/bin/python3 -m pip install -r /plant_monitoring_system/requirements.txt
 
 # create systemd unit service
 cat > /etc/systemd/system/plant_monitoring_system.service << EOF
