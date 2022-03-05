@@ -1,7 +1,6 @@
 schedule
-RPi.GPIO
 adafruit-circuitpython-busdevice
 adafruit-circuitpython-veml7700
 adafruit-circuitpython-neopixel
-picamera
+#picamera (install apt package is preferable)
 prometheus_client
