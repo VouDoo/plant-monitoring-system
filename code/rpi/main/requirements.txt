@@ -2,5 +2,6 @@ schedule
 RPi.GPIO
 board
 neopixel
+adafruit-circuitpython-veml7700
 picamera
 prometheus_client
