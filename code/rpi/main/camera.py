@@ -26,12 +26,11 @@ class Camera(object):
         self.__camera.rotation = config.CAMERA_ROTATION
         logging.info(f"Camera rotation is set to {self.__camera.rotation}.")
 
-        self.__output_dir = config.CAMERA_OUTPUT_DIR
-        logging.info(f'Camera output directory is set to "{self.__output_dir}".')
-        if not os.path.exists(self.__output_dir):
-            os.makedirs(self.__output_dir)
-            logging.info(f"Camera output directory created as it did not exist.")
-        self.__last_output_file = None
+        self.__capture_dir = config.CAMERA_CAPTURE_DIR
+        logging.info(f'Camera capture directory is set to "{self.__capture_dir}".')
+        if not os.path.exists(self.__capture_dir):
+            os.makedirs(self.__capture_dir)
+            logging.info(f"Camera capture directory created as it did not exist.")
 
     def __led_on(self, state: bool) -> None:
         """Set camera's LED state."""
@@ -40,7 +39,7 @@ class Camera(object):
     def capture(self) -> None:
         """Capture a photo with the camera module and save it as a file."""
         now = time.strftime("%Y%m%d-%H%M%S")
-        filepath = os.path.join(self.__output_dir, f"{now}.jpg")
+        filepath = os.path.join(self.__capture_dir, f"{now}.jpg")
 
         self.__led_on(True)
         self.__camera.start_preview()
@@ -48,12 +47,7 @@ class Camera(object):
         self.__camera.capture(filepath, "jpeg")
         self.__camera.stop_preview()
         self.__led_on(False)
-        self.__last_output_file = filepath
         logging.info(f'Captured photo saved as "{filepath}".')
-
-    def get_last_output(self) -> str:
-        """Get path of the last output file."""
-        return self.__last_output_file
 
     def is_button_pressed(self) -> bool:
         """Get state of the button and return True is the button is pressed."""
