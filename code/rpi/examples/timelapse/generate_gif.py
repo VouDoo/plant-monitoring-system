@@ -6,7 +6,7 @@ images = [
     for f in sorted(glob.glob("*.jpg"))
 ]
 images[0].save(
-    fp="timelapse.jpg",
+    fp="timelapse.gif",
     format="GIF",
     save_all=True,
     append_images=images,
